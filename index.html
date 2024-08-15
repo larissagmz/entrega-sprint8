@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <div id="cabeçalho" class="container">
+                <h1>Waertake</h1>
+                <div class="botoes">
+                    <button>Todos</button>
+                    <button>Relógios</button>
+                    <button>Colares</button>
+                    <button>Camisetas</button>
+                    <button class="botao-img">
+                        <img src="./lamapda.png" alt="" />
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <div class="vitrine">
+                <section class="sessao">
+                    <ul id="lista-Relogios" class="lista-produto"></ul>
+                </section>
+                <section class="sessao">
+                    <ul id="lista-colares" class="lista-produto"></ul>
+                </section>
+                <section class="sessao">
+                    <ul id="lista-camisetas" class="lista-produto"></ul>
+                </section>
+            </div>
+            <div class="pesquisa">
+                <div>
+                    <input
+                        type="text"
+                        name="barra"
+                        id="barra-pesquisa"
+                        placeholder="Digite aqui sua pesquisa"
+                    />
+                    <button class="botao-pesquisar">Pesquisar</button>
+                </div>
+                <div class="div-compras">Carrinho de compras</div>
+                <div class="div-carrinho-vazio">
+                    <p>Carrinho vazio</p>
+                    <p>Adicione itens</p>
+                </div>
+            </div>
+        </main>
+        <script src="index.js"></script>
+    </body>
+</html>
