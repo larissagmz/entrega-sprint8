@@ -176,8 +176,67 @@ figure{
     height: 170px;
     font-size: small;
     font-weight: 600;
+    gap: 10px;
 }
-.div-carrinho-vazio p:first-child{
+.outro-carrinho{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(211, 211, 211, 0.438);
+    width: 279px;
+    padding: 14px 5px;
+}
+#carrinho-vazio{
     font-weight: 800;
     font-size: 20px;
+}
+.lista-carrinho{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    width: 100%;
+    height: 100%;
+}
+.produto-carrinho{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    gap: 13px;
+    
+}
+.produto-carrinho figure{
+    height: 100%;
+    width: 30%;
+    background-color: white;
+}
+.inf-produto-carrinho{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: 100%;
+    height: 70%;
+    font-weight: 700;
+    gap: 3px;
+}
+.inf-produto-carrinho strong{
+    color:rgb(31, 12, 82);
+}
+.inf-produto-carrinho button{
+    font-weight: 700;
+    font-size: 12px;
+    text-align: start;
+}
+.remover-carrinho{
+
+}
+.carrinho-inf{
+    display: flex;
+    justify-content: space-between;
+    width: 279px;
+    border: 1px solid;
+}
+.quantidade-preco{
+    
 }

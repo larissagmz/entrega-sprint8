@@ -29,18 +29,12 @@
         </header>
         <main class="container">
             <div class="vitrine">
-                <section class="sessao">
-                    <ul id="lista-Relogios" class="lista-produto"></ul>
-                </section>
-                <section class="sessao">
-                    <ul id="lista-colares" class="lista-produto"></ul>
-                </section>
-                <section class="sessao">
-                    <ul id="lista-camisetas" class="lista-produto"></ul>
-                </section>
+                <ul id="lista-Relogios" class="lista-produto"></ul>
+                <ul id="lista-colares" class="lista-produto"></ul>
+                <ul id="lista-camisetas" class="lista-produto"></ul>
             </div>
             <div class="pesquisa">
-                <div>
+                <form class="formulario">
                     <input
                         type="text"
                         name="barra"
@@ -48,12 +42,30 @@
                         placeholder="Digite aqui sua pesquisa"
                     />
                     <button class="botao-pesquisar">Pesquisar</button>
-                </div>
+                </form>
                 <div class="div-compras">Carrinho de compras</div>
                 <div class="div-carrinho-vazio">
-                    <p>Carrinho vazio</p>
+                    <p id="carrinho-vazio">Carrinho vazio</p>
                     <p>Adicione itens</p>
+                    <!-- <ul class="lista-carrinho">
+                        <li class="produto-carrinho">
+                            <figure>
+                                <img
+                                    src="relogio1-removebg-preview.png"
+                                    alt=""
+                                />
+                            </figure>
+                            <div class="inf-produto-carrinho">
+                                <p id="titulo-carrinho-produto">qualquer</p>
+                                <strong>12323</strong>
+                                <button class="remover-carrinho">
+                                    remover
+                                </button>
+                            </div>
+                        </li>
+                    </ul> -->
                 </div>
+                <div class="carrinho-inf"></div>
             </div>
         </main>
         <script src="index.js"></script>
