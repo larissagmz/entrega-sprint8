@@ -236,6 +236,27 @@ figure{
     justify-content: space-between;
     width: 279px;
     border: 1px solid;
+    height: 90px;
+    font-size: 12px;
+    font-weight: 300;
+    align-items: center;
+    padding: 0 15px;
+    color: white;
+    background-color: black;
+}
+.carrinho-inf div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+
+}
+.carrinho-inf div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 10px;
+
 }
 .quantidade-preco{
     
