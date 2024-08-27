@@ -178,6 +178,33 @@ let carrinhoCompras = document.querySelector(".div-carrinho-vazio");
 divInfCarrinho = document.querySelector(".inf-vazia");
 let pesquisa = document.querySelector(".pesquisa");
 
+// function adicionarCarrinho(list) {
+//     let botaoLista = document.querySelectorAll(".botao-comprar");
+//     let produtos = [];
+//     for (let i = 0; i < botaoLista.length; i++) {
+//         botaoLista[i].setAttribute("data-id", list[i].id);
+//     }
+//     for (let i = 0; i < botaoLista.length; i++) {
+//         botaoLista[i].addEventListener("click", (e) => {
+//             carrinhoCompras.classList.remove("div-carrinho-vazio");
+//             carrinhoCompras.classList.add("outro-carrinho");
+//             let id = Number(botaoLista[i].getAttribute("data-id"));
+//             for (let j = 0; j < list.length; j++) {
+
+//                 if (id === list[j].id) {
+//                     let produto = { ...list[j], id: produtos.length + 1 };
+//                     produtos.push(produto);
+//                 }
+//             }
+//             console.log(produtos);
+//             carrinhoCompras.innerHTML = "";
+//             divInfCarrinho.classList.add("carrinho-inf");
+//             cardsCarrinho(produtos);
+//             removerProdutosCarrinho(produtos);
+//         });
+//     }
+// }
+
 function adicionarCarrinho(list) {
     let botaoLista = document.querySelectorAll(".botao-comprar");
     let produtos = [];
@@ -190,11 +217,19 @@ function adicionarCarrinho(list) {
             carrinhoCompras.classList.add("outro-carrinho");
             let id = Number(botaoLista[i].getAttribute("data-id"));
             for (let j = 0; j < list.length; j++) {
-                if (id === list[j].id) {
-                    produtos.push(list[j]);
+                for (let l = 0; l < listaProdutos.length; l++) {
+                    if (list[j].titulo === listaProdutos[l].titulo) {
+                        if (id === list[j].id) {
+                            let produto = {
+                                ...list[j],
+                                id: produtos.length + 1,
+                            };
+                            produtos.push(produto);
+                        }
+                    }
                 }
             }
-
+            console.log(produtos);
             carrinhoCompras.innerHTML = "";
             divInfCarrinho.classList.add("carrinho-inf");
             cardsCarrinho(produtos);
