@@ -6,7 +6,7 @@ let listaProdutos = [
         titulo: "Fit Haiz",
         descricao:
             "Smartwatch Relógio Inteligente My Watch I Fit Haiz Tela Full Touch 1.28 Resistente à Água IP67 com ...",
-        preco: 278.339,
+        preco: 200.303,
     },
     {
         id: 2,
@@ -140,12 +140,12 @@ function separarCards(list) {
         }
     }
 }
-renderizarCards(listaProdutos);
 const divVitrine = document.querySelectorAll(".lista-produto");
+
+renderizarCards(listaProdutos);
 
 function acharItens() {
     let form = document.querySelector(".formulario");
-    let botaoLista = document.querySelectorAll(".botao-comprar");
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -205,6 +205,50 @@ let pesquisa = document.querySelector(".pesquisa");
 //     }
 // }
 
+function filtrarItens(list) {
+    let listaBotoes = document.querySelectorAll(".botaoNav");
+    let divBotoes = document.querySelector(".botoes");
+    let listaRelogios = [];
+    let listaColares = [];
+    let listCamisetas = [];
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].tipoProduto === "Relogios") {
+            listaRelogios.push(list[i]);
+        } else if (list[i].tipoProduto === "Colares") {
+            listaColares.push(list[i]);
+        } else {
+            listCamisetas.push(list[i]);
+        }
+    }
+    for (let i = 0; i < listaBotoes.length; i++) {
+        listaBotoes[i].setAttribute("data-id", i);
+    }
+    for (let j = 0; j < listaBotoes.length; j++) {
+        listaBotoes[j].addEventListener("click", (e) => {
+            let id = Number(listaBotoes[j].getAttribute("data-id"));
+            if (id === 0) {
+                renderizarCards(list);
+            }
+            if (id === 1) {
+                divVitrine.forEach((ul) => {
+                    ul.innerHTML = ""; // Limpa o conteúdo de cada <ul>
+                });
+                renderizarCards(listaRelogios);
+            } else if (id === 2) {
+                divVitrine.forEach((ul) => {
+                    ul.innerHTML = ""; // Limpa o conteúdo de cada <ul>
+                });
+                renderizarCards(listaColares);
+            } else {
+                divVitrine.forEach((ul) => {
+                    ul.innerHTML = ""; // Limpa o conteúdo de cada <ul>
+                });
+                renderizarCards(listCamisetas);
+            }
+        });
+    }
+}
+filtrarItens(listaProdutos);
 function adicionarCarrinho(list) {
     let botaoLista = document.querySelectorAll(".botao-comprar");
     let produtos = [];
@@ -219,9 +263,9 @@ function adicionarCarrinho(list) {
             for (let j = 0; j < list.length; j++) {
                 for (let l = 0; l < listaProdutos.length; l++) {
                     if (list[j].titulo === listaProdutos[l].titulo) {
-                        if (id === list[j].id) {
+                        if (id === listaProdutos[l].id) {
                             let produto = {
-                                ...list[j],
+                                ...listaProdutos[l],
                                 id: produtos.length + 1,
                             };
                             produtos.push(produto);
