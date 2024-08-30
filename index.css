@@ -22,28 +22,30 @@ main{
     margin-bottom: 50px;
   }
 .container{
+    display: flex;
+    justify-content: space-between;
     width: 1200px;
     margin: 0 auto;
 }
-#cabeçalho{
+#header{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     justify-content: space-between;
 }
-.botoes{
+.buttons{
     display: flex;
     flex-direction: row;
     height: 30px;
     gap: 10px;
    
 }
-.botoes button{
+.buttons button{
     background-color: white;
     cursor: pointer;
 }
-.botao-img{
+.button-img{
     width: 40px;
     height: 40px;
 }
@@ -52,13 +54,13 @@ img{
     width: 70%;
     object-fit: scale-down;
 }
-.lista-produto{
+.product-list{
     display: flex;
     list-style: none;
     flex-direction: row;
     gap: 15px;
 }
-.produto{
+.product{
     display: flex;
     width: 260px;
     height: 400px;
@@ -69,11 +71,11 @@ img{
    font-size: small;
    font-weight: 600;
 }
-.produto:hover{
+.product:hover{
     border: 2px solid;
     transform: none;
 }
-.inf-produto{
+.inf-product{
     display: flex;
     width: 260px;
     height: 400px;
@@ -83,7 +85,7 @@ img{
    font-weight: 600;
    padding: 10px;
 }
-.vitrine{
+.showcase{
     width: 70%;
     height: 100vh;
     display: flex;
@@ -91,7 +93,7 @@ img{
     gap: 15px;
    
 }
-.pesquisa{
+.search{
     width: 25%;
     height: 100vh;
 }
@@ -103,46 +105,46 @@ figure{
     height: 150px;
     background-color: rgba(211, 211, 211, 0.438);
 }
-.tipo-produto{
+.type-product{
     display: flex;
 }
-.tipo-produto p{
+.type-product p{
     background-color: rgb(31, 12, 82);
     color: white;
     font-weight: 400;
     padding: 2px 5px;
 }
-.preco{
+.price{
     color: rgb(31, 12, 82) ;
 }
-.produto button{
+.buy-button{
     background-color: white;
     display: flex;
     font-weight: 700;
     cursor: pointer;
 }
-.titulo{
+.title{
     font-size: 20px;
     font-weight: 900;
 }
-.pesquisa{
+.search{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.botao-pesquisar{
+.button-search{
     background-color: rgb(31, 12, 82);
     color: white;
     width: 80px;
     height: 40px;
 }
-#barra-pesquisa{
+#search-bar{
     height: 40px;
     background-color: rgba(211, 211, 211, 0.438);
     font-weight: 700;
     padding: 4px 9px;
 }
-.div-compras{
+.div-shopping{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,7 +156,7 @@ figure{
     font-size: 15px;
     font-weight: 600;
 }
-.div-carrinho-vazio{
+.div-empty-cart{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -166,7 +168,7 @@ figure{
     font-weight: 600;
     gap: 10px;
 }
-.outro-carrinho{
+.other-cart{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,11 +177,11 @@ figure{
     width: 279px;
     padding: 14px 5px;
 }
-#carrinho-vazio{
+#cart-empty{
     font-weight: 800;
     font-size: 20px;
 }
-.lista-carrinho{
+.list-cart{
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -187,19 +189,19 @@ figure{
     width: 100%;
     height: 100%;
 }
-.produto-carrinho{
+.product-cart{
     display: flex;
     width: 100%;
     height: 60px;
     gap: 13px;
    
 }
-.produto-carrinho figure{
+.product-cart figure{
     height: 100%;
     width: 30%;
     background-color: white;
 }
-.inf-produto-carrinho{
+.inf-product-cart{
     display: flex;
     flex-direction: column;
     font-size: 12px;
@@ -208,16 +210,16 @@ figure{
     font-weight: 700;
     gap: 3px;
 }
-.inf-produto-carrinho strong{
+.inf-product-cart strong{
     color:rgb(31, 12, 82);
 }
-.inf-produto-carrinho button{
+.inf-product-cart button{
     font-weight: 700;
     font-size: 12px;
     text-align: start;
     cursor: pointer;
 }
-.carrinho-inf{
+.cart-inf{
     display: flex;
     justify-content: space-between;
     width: 279px;
@@ -230,13 +232,13 @@ figure{
     color: white;
     background-color: black;
 }
-.carrinho-inf div:nth-child(2){
+.cart-inf div:nth-child(2){
     display: flex;
     flex-direction: column;
     align-items: end;
     gap: 10px;
 }
-.carrinho-inf div:nth-child(1){
+.cart-inf div:nth-child(1){
     display: flex;
     flex-direction: column;
     align-items: baseline;

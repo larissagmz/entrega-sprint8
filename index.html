@@ -14,41 +14,41 @@
     </head>
     <body>
         <header>
-            <div id="cabeçalho" class="container">
+            <div id="header" class="container">
                 <h1>Waertake</h1>
-                <div class="botoes">
-                    <button class="botaoNav">Todos</button>
-                    <button class="botaoNav">Relógios</button>
-                    <button class="botaoNav">Colares</button>
-                    <button class="botaoNav">Camisetas</button>
-                    <button class="botao-img">
+                <div class="buttons">
+                    <button class="button-nav">Todos</button>
+                    <button class="button-nav">Relógios</button>
+                    <button class="button-nav">Colares</button>
+                    <button class="button-nav">Camisetas</button>
+                    <button class="button-img">
                         <img src="./lamapda.png" alt="" />
                     </button>
                 </div>
             </div>
         </header>
         <main class="container">
-            <div class="vitrine">
-                <ul id="lista-Relogios" class="lista-produto"></ul>
-                <ul id="lista-colares" class="lista-produto"></ul>
-                <ul id="lista-camisetas" class="lista-produto"></ul>
+            <div class="showcase">
+                <ul id="listWatches" class="product-list"></ul>
+                <ul id="listNecklaces" class="product-list"></ul>
+                <ul id="listTshirts" class="product-list"></ul>
             </div>
-            <div class="pesquisa">
-                <form class="formulario">
+            <div class="search">
+                <form class="form">
                     <input
                         type="text"
                         name="barra"
-                        id="barra-pesquisa"
+                        id="search-bar"
                         placeholder="Digite aqui sua pesquisa"
                     />
-                    <button class="botao-pesquisar">Pesquisar</button>
+                    <button class="button-search">Pesquisar</button>
                 </form>
-                <div class="div-compras">Carrinho de compras</div>
-                <div class="div-carrinho-vazio">
-                    <p id="carrinho-vazio">Carrinho vazio</p>
+                <div class="div-shopping">Carrinho de compras</div>
+                <div class="div-empty-cart">
+                    <p id="cart-empty">Carrinho vazio</p>
                     <p>Adicione itens</p>
                 </div>
-                <div class="inf-vazia"></div>
+                <div class="inf-empty"></div>
             </div>
         </main>
         <script src="index.js"></script>

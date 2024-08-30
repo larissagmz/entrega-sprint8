@@ -83,9 +83,9 @@ let listaProdutos = [
 ];
 
 function renderCards(list) {
-    let watchesUl = document.querySelector("#lista-Relogios");
-    let neckalcesUl = document.querySelector("#lista-colares");
-    let tshirtsUl = document.querySelector("#lista-camisetas");
+    let watchesUl = document.querySelector("#listWatches");
+    let neckalcesUl = document.querySelector("#listNecklaces");
+    let tshirtsUl = document.querySelector("#listTshirts");
     for (let i = 0; i < list.length; i++) {
         let formattedPrice = list[i].price.toLocaleString("pt-br", {
             style: "currency",
@@ -102,12 +102,12 @@ function renderCards(list) {
         let price = document.createElement("strong");
         let button = document.createElement("button");
 
-        productsLi.className = "produto";
-        divInf.className = "inf-produto";
-        productType.className = "tipo-produto";
-        title.className = "titulo";
-        price.className = "preco";
-        button.className = "botao-comprar";
+        productsLi.className = "product";
+        divInf.className = "inf-product";
+        productType.className = "type-product";
+        title.className = "title";
+        price.className = "price";
+        button.className = "buy-button";
 
         img.src = list[i].image;
         productTypeName.innerText = list[i].productType;
@@ -132,9 +132,9 @@ function renderCards(list) {
 }
 
 renderCards(listaProdutos);
-const showcaseDiv = document.querySelectorAll(".lista-produto");
+const showcaseDiv = document.querySelectorAll(".product-list");
 function searchItems() {
-    let form = document.querySelector(".formulario");
+    let form = document.querySelector(".form");
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -142,7 +142,7 @@ function searchItems() {
         showcaseDiv.forEach((ul) => {
             ul.innerHTML = "";
         });
-        let input = document.querySelector("#barra-pesquisa");
+        let input = document.querySelector("#search-bar");
         if (input.value != "") {
             for (let i = 0; i < listaProdutos.length; i++) {
                 if (listaProdutos[i].title === input.value) {
@@ -159,12 +159,12 @@ function searchItems() {
         }
     });
 }
-let shoppingCart = document.querySelector(".div-carrinho-vazio");
-divInfCart = document.querySelector(".inf-vazia");
-let pesquisa = document.querySelector(".pesquisa");
+let shoppingCart = document.querySelector(".div-empty-cart");
+divInfCart = document.querySelector(".inf-empty");
+let search = document.querySelector(".search");
 
 function filterItems(list) {
-    let buttonsList = document.querySelectorAll(".botaoNav");
+    let buttonsList = document.querySelectorAll(".button-nav");
     let watchesList = [];
     let necklacesList = [];
     let tshirtsList = [];
@@ -217,14 +217,14 @@ function filterItems(list) {
 let cartProducts = [];
 let counterCartId = 1;
 function addCart(list) {
-    let listButton = document.querySelectorAll(".botao-comprar");
+    let listButton = document.querySelectorAll(".buy-button");
     for (let i = 0; i < listButton.length; i++) {
         listButton[i].setAttribute("data-id", list[i].id);
     }
     for (let i = 0; i < listButton.length; i++) {
         listButton[i].addEventListener("click", (e) => {
-            shoppingCart.classList.remove("div-carrinho-vazio");
-            shoppingCart.classList.add("outro-carrinho");
+            shoppingCart.classList.remove("div-empty-cart");
+            shoppingCart.classList.add("other-cart");
             let id = Number(listButton[i].getAttribute("data-id"));
 
             for (let l = 0; l < list.length; l++) {
@@ -237,7 +237,7 @@ function addCart(list) {
                 }
             }
             shoppingCart.innerHTML = "";
-            divInfCart.classList.add("carrinho-inf");
+            divInfCart.classList.add("cart-inf");
             cartCards(cartProducts);
             productsCartRemove(cartProducts);
         });
@@ -245,7 +245,7 @@ function addCart(list) {
 }
 
 function productsCartRemove(list) {
-    let removeButton = document.querySelectorAll(".remover-carrinho");
+    let removeButton = document.querySelectorAll(".cart-remove");
     for (let i = 0; i < list.length; i++) {
         removeButton[i].setAttribute("data-id", list[i].id);
     }
@@ -261,12 +261,12 @@ function productsCartRemove(list) {
             cartCards(list);
             productsCartRemove(list);
             if (list.length === 0) {
-                shoppingCart.classList.remove("outro-carrinho");
-                shoppingCart.classList.add("div-carrinho-vazio");
+                shoppingCart.classList.remove("other-cart");
+                shoppingCart.classList.add("div-empty-cart");
                 shoppingCart.innerHTML =
-                    '  <p id="carrinho-vazio">Carrinho vazio</p><p>Adicione itens</p>';
+                    '  <p id="cart-empty">Carrinho vazio</p><p>Adicione itens</p>';
                 divInfCart.innerHTML = "";
-                divInfCart.classList.remove("carrinho-inf");
+                divInfCart.classList.remove("cart-inf");
             }
         });
     }
@@ -274,7 +274,7 @@ function productsCartRemove(list) {
 
 function cartCards(list) {
     let ul = document.createElement("ul");
-    ul.className = "lista-carrinho";
+    ul.className = "list-cart";
     let totalPrice = 0;
     let totalQuantity = 0;
     for (let i = 0; i < list.length; i++) {
@@ -296,9 +296,9 @@ function cartCards(list) {
         let price = document.createElement("strong");
         let removeButton = document.createElement("button");
 
-        li.className = "produto-carrinho";
-        div.className = "inf-produto-carrinho";
-        removeButton.className = "remover-carrinho";
+        li.className = "product-cart";
+        div.className = "inf-product-cart";
+        removeButton.className = "cart-remove";
         img.src = list[i].image;
         title.innerText = list[i].title;
         price.innerText = formattedPrice;
@@ -312,10 +312,10 @@ function cartCards(list) {
 
         divInfCart.innerHTML = "";
         divInfCart.innerHTML = `
-    <div class="quantidade-preco"><p>Quantidade:</p><p>Total:</p></div>
+    <div class="quantity-price"><p>Quantidade:</p><p>Total:</p></div>
     <div><p>${totalQuantity}</p><p>${priceTotalFomatted}</p></div>
 `;
-        pesquisa.append(divInfCart);
+        search.append(divInfCart);
     }
 }
 addCart(listaProdutos);
